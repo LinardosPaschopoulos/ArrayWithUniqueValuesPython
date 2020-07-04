@@ -1,0 +1,14 @@
+from random import randrange
+
+size = 10
+T = [ ]
+for i in range(size):
+	T.append(randrange(size) + 1)
+	if i > 0:
+		i_check = 0
+		while i > i_check:
+			while T[i] == T[i_check]:
+				T.insert(i, randrange(size) + 1)
+				i_check = -1
+			i_check = i_check + 1
+	print(T[i])
